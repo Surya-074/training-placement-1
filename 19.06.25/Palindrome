@@ -1,0 +1,10 @@
+public class Palindrome {
+    public static void main(String[] args) {
+        int n = 121, rev = 0, t = n;
+        while (t != 0) {
+            rev = rev * 10 + t % 10;
+            t /= 10;
+        }
+        System.out.println(n == rev ? "Palindrome" : "Not Palindrome");
+    }
+}
