@@ -1,0 +1,14 @@
+public class Armstrong4Digit {
+    public static void main(String[] args) {
+        int num = 9474, temp = num, sum = 0;
+        while(num != 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 4);
+            num /= 10;
+        }
+        if(temp == sum)
+            System.out.println("Armstrong Number");
+        else
+            System.out.println("Not an Armstrong Number");
+    }
+}
