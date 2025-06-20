@@ -1,0 +1,10 @@
+public class PerfectSquare {
+    public static void main(String[] args) {
+        int num = 49;
+        double sqrt = Math.sqrt(num);
+        if(sqrt == (int)sqrt)
+            System.out.println("Perfect Square");
+        else
+            System.out.println("Not a Perfect Square");
+    }
+}
