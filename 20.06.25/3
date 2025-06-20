@@ -1,0 +1,7 @@
+public class Smallest {
+    public static void main(String[] args) {
+        int a = 5, b = 10, c = 3;
+        int smallest = (a < b && a < c) ? a : (b < c ? b : c);
+        System.out.println("Smallest: " + smallest);
+    }
+}
