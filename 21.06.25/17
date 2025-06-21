@@ -1,0 +1,10 @@
+class Car {
+    Car() {
+        System.out.println("Car is created");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car();
+    }
+}
