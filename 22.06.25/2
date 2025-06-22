@@ -1,0 +1,11 @@
+public class CharCase {
+    public static void main(String[] args) {
+        char ch = 'A';
+        if(Character.isUpperCase(ch))
+            System.out.println("Uppercase");
+        else if(Character.isLowerCase(ch))
+            System.out.println("Lowercase");
+        else
+            System.out.println("Not an alphabet");
+    }
+}
