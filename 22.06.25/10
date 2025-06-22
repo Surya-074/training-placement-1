@@ -1,0 +1,9 @@
+public class EvenInArray {
+    public static void main(String[] args) {
+        int[] arr = {4, 7, 2, 9, 10};
+        System.out.print("Even numbers: ");
+        for(int n : arr)
+            if(n % 2 == 0)
+                System.out.print(n + " ");
+    }
+}
