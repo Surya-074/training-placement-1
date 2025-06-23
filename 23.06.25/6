@@ -1,0 +1,11 @@
+public class SumNEven {
+    public static void main(String[] args) {
+        int n = 5, sum = 0, count = 0, num = 2;
+        while(count < n) {
+            sum += num;
+            num += 2;
+            count++;
+        }
+        System.out.println("Sum: " + sum);
+    }
+}
