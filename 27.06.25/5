@@ -1,0 +1,3 @@
+lst = [int(x) for x in input("Enter numbers: ").split()]
+unique = list(set(lst))
+print("List without duplicates:", unique)
