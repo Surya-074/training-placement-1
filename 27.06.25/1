@@ -1,0 +1,4 @@
+lst = [int(x) for x in input("Enter numbers: ").split()]
+lst = list(set(lst))  # Remove duplicates
+lst.sort()
+print("Second largest number is:", lst[-2])
