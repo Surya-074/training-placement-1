@@ -1,0 +1,4 @@
+lst1 = [int(x) for x in input("Enter first list: ").split()]
+lst2 = [int(x) for x in input("Enter second list: ").split()]
+merged = list(set(lst1 + lst2))
+print("Merged list without duplicates:", merged)
