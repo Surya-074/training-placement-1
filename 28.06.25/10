@@ -1,0 +1,3 @@
+nums = [float(x) for x in input("Enter numbers: ").split()]
+average = sum(nums) / len(nums)
+print("Average:", average)
