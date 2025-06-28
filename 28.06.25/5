@@ -1,0 +1,5 @@
+lst = [int(x) for x in input("Enter list elements: ").split()]
+if lst == lst[::-1]:
+    print("Palindrome list")
+else:
+    print("Not a palindrome list")
