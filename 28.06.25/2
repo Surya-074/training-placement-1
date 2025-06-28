@@ -1,0 +1,3 @@
+lst = [int(x) for x in input("Enter numbers: ").split()]
+print("Ascending:", sorted(lst))
+print("Descending:", sorted(lst, reverse=True))
