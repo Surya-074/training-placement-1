@@ -1,0 +1,4 @@
+lst = [int(x) for x in input("Enter numbers: ").split()]
+even = len([x for x in lst if x % 2 == 0])
+odd = len(lst) - even
+print("Even:", even, "Odd:", odd)
