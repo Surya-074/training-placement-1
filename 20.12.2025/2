@@ -1,0 +1,19 @@
+def dfs(u):
+    vis[u] = True
+    rec[u] = True
+    for v in g[u]:
+        if not vis[v] and dfs(v):
+            return True
+        elif rec[v]:
+            return True
+    rec[u] = False
+    return False
+
+n, e = map(int, input().split())
+g = {i: [] for i in range(n)}
+for _ in range(e):
+    u, v = map(int, input().split())
+    g[u].append(v)
+vis = [False]*n
+rec = [False]*n
+print(any(dfs(i) for i in range(n) if not vis[i]))
