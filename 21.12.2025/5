@@ -1,0 +1,7 @@
+def perm(s, p=""):
+    if not s:
+        print(p)
+    for i in range(len(s)):
+        perm(s[:i]+s[i+1:], p+s[i])
+
+perm(input())
