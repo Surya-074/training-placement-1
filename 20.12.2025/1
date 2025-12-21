@@ -1,0 +1,15 @@
+n = int(input())
+cols = set()
+d1 = set()
+d2 = set()
+def back(r):
+    if r == n:
+        return 1
+    c = 0
+    for i in range(n):
+        if i not in cols and r-i not in d1 and r+i not in d2:
+            cols.add(i); d1.add(r-i); d2.add(r+i)
+            c += back(r+1)
+            cols.remove(i); d1.remove(r-i); d2.remove(r+i)
+    return c
+print(back(0))
