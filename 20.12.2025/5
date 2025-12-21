@@ -1,0 +1,10 @@
+import bisect
+arr = list(map(int, input().split()))
+lis = []
+for x in arr:
+    i = bisect.bisect_left(lis, x)
+    if i < len(lis):
+        lis[i] = x
+    else:
+        lis.append(x)
+print(len(lis))
