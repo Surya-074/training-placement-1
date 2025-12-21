@@ -1,0 +1,17 @@
+board = [input().split() for _ in range(9)]
+valid = True
+for i in range(9):
+    r = [x for x in board[i] if x != '.']
+    c = [board[j][i] for j in range(9) if board[j][i] != '.']
+    if len(r) != len(set(r)) or len(c) != len(set(c)):
+        valid = False
+for i in range(0,9,3):
+    for j in range(0,9,3):
+        box = []
+        for x in range(i,i+3):
+            for y in range(j,j+3):
+                if board[x][y] != '.':
+                    box.append(board[x][y])
+        if len(box) != len(set(box)):
+            valid = False
+print("Valid" if valid else "Invalid")
