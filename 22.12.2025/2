@@ -1,0 +1,16 @@
+def ser(r):
+    if not r:
+        return "#"
+    return str(r.val)+","+ser(r.left)+","+ser(r.right)
+
+def des(s):
+    it = iter(s.split(","))
+    def f():
+        v = next(it)
+        if v == "#":
+            return None
+        n = Node(int(v))
+        n.left = f()
+        n.right = f()
+        return n
+    return f()
