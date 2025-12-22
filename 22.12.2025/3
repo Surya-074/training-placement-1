@@ -1,0 +1,10 @@
+s = input().split()
+st = []
+for i in s:
+    if i.isdigit():
+        st.append(int(i))
+    else:
+        b = st.pop()
+        a = st.pop()
+        st.append(eval(str(a)+i+str(b)))
+print(st[0])
