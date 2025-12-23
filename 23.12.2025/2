@@ -1,0 +1,16 @@
+from collections import deque
+b = input().split()
+e = input()
+w = set(input().split())
+q = deque([(b[0],1)])
+while q:
+    s,l = q.popleft()
+    if s==e:
+        print(l)
+        break
+    for i in range(len(s)):
+        for c in "abcdefghijklmnopqrstuvwxyz":
+            t = s[:i]+c+s[i+1:]
+            if t in w:
+                w.remove(t)
+                q.append((t,l+1))
