@@ -1,0 +1,22 @@
+from collections import deque
+n,e = map(int,input().split())
+g = {i:[] for i in range(n)}
+for _ in range(e):
+    u,v = map(int,input().split())
+    g[u].append(v)
+    g[v].append(u)
+col = [-1]*n
+ok = True
+for i in range(n):
+    if col[i]==-1:
+        col[i]=0
+        q=deque([i])
+        while q:
+            u=q.popleft()
+            for v in g[u]:
+                if col[v]==-1:
+                    col[v]=1-col[u]
+                    q.append(v)
+                elif col[v]==col[u]:
+                    ok=False
+print(ok)
