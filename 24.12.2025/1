@@ -1,0 +1,33 @@
+n,e = map(int,input().split())
+g = {i:[] for i in range(n)}
+for _ in range(e):
+    u,v = map(int,input().split())
+    g[u].append(v)
+    g[v].append(u)
+tin = [-1]*n
+low = [-1]*n
+vis = [False]*n
+res = set()
+t = 0
+def dfs(u,p):
+    global t
+    vis[u] = True
+    tin[u] = low[u] = t
+    t += 1
+    c = 0
+    for v in g[u]:
+        if v == p:
+            continue
+        if vis[v]:
+            low[u] = min(low[u], tin[v])
+        else:
+            dfs(v,u)
+            low[u] = min(low[u], low[v])
+            if low[v] >= tin[u] and p != -1:
+                res.add(u)
+            c += 1
+    if p == -1 and c > 1:
+        res.add(u)
+
+dfs(0,-1)
+print(sorted(res))
