@@ -1,0 +1,14 @@
+s = input()
+p = input()
+m = len(p)
+h = pow(256,m-1,101)
+ph = sh = 0
+for i in range(m):
+    ph = (256*ph + ord(p[i]))%101
+    sh = (256*sh + ord(s[i]))%101
+for i in range(len(s)-m+1):
+    if ph == sh and s[i:i+m] == p:
+        print(i)
+        break
+    if i < len(s)-m:
+        sh = (256*(sh-ord(s[i])*h)+ord(s[i+m]))%101
