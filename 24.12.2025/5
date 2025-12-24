@@ -1,0 +1,22 @@
+from collections import defaultdict,deque
+w = input().split()
+g = defaultdict(set)
+ind = defaultdict(int)
+for i in range(len(w)-1):
+    a,b = w[i],w[i+1]
+    for j in range(min(len(a),len(b))):
+        if a[j]!=b[j]:
+            if b[j] not in g[a[j]]:
+                g[a[j]].add(b[j])
+                ind[b[j]]+=1
+            break
+q = deque([c for c in set("".join(w)) if ind[c]==0])
+res = ""
+while q:
+    c = q.popleft()
+    res += c
+    for n in g[c]:
+        ind[n]-=1
+        if ind[n]==0:
+            q.append(n)
+print(res)
