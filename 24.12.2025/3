@@ -1,0 +1,14 @@
+n,e = map(int,input().split())
+edges = [tuple(map(int,input().split())) for _ in range(e)]
+par = list(range(n))
+def find(x):
+    if par[x]!=x:
+        par[x]=find(par[x])
+    return par[x]
+cost = 0
+for u,v,w in sorted(edges,key=lambda x:x[2]):
+    pu,pv = find(u),find(v)
+    if pu!=pv:
+        par[pu]=pv
+        cost+=w
+print(cost)
