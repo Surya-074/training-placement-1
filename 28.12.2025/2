@@ -1,0 +1,6 @@
+lst = list(map(int, input().split()))
+max_val = lst[0]
+for i in lst:
+    if i > max_val:
+        max_val = i
+print(max_val)
